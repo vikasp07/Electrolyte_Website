@@ -31,13 +31,13 @@ const Navigation = () => {
           >
             About Us
           </Link>
-          <a
-            href="#services"
+          <Link
+            to="/services"
             className="nav-link"
             onClick={() => setIsMenuOpen(false)}
           >
             Services
-          </a>
+          </Link>
           <a
             href="#contact"
             className="nav-link cta-button"

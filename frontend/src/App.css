@@ -14,6 +14,43 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root {
+  /* Oregon Systems Dark Palette */
+  --primary: #FFD400;
+  --primary-dark: #0B0B0B;
+  --primary-light: #1F2937;
+  --primary-accent: #D5FFF8;
+
+  --bg-dark: #111827;
+  --bg-light: #F9FAFB;
+  --bg-card: #1F2937;
+  --border-light: #374151;
+
+  --text-heading: #FFFFFF;
+  --text-body: #9CA3AF;
+  --text-dark: #111827;
+  --text-muted: #6B7280;
+
+  --btn-primary: #FFD400;
+  --btn-primary-hover: #E6C400;
+  --btn-outline-border: #FFD400;
+  --btn-outline-hover-bg: #CCFFF7;
+
+  --accent-mint: #64FFC9;
+  --accent-success: #10B981;
+  --accent-warning: #FFD400;
+  --accent-error: #EF4444;
+
+  /* Backwards-compatibility aliases */
+  --accent-color: var(--primary);
+  --alternate-color: var(--primary-dark);
+  --dark-color: var(--bg-dark);
+  --light-color: var(--bg-light);
+  --text-color: var(--text-dark);
+  --gray-text: var(--text-muted);
+  --muted-color: var(--text-muted);
+}
+
 .App {
   display: flex;
   flex-direction: column;
@@ -23,7 +60,7 @@ body {
 .main-content {
   flex: 1;
   width: 100%;
-  background-color: #fafafa;
+  background-color: var(--light-color);
 }
 
 /* Typography */
@@ -33,24 +70,24 @@ h3,
 h4,
 h5,
 h6 {
-  color: #1a1a1a;
+  color: var(--text-color);
   font-weight: 600;
   line-height: 1.2;
 }
 
 p {
-  color: #555;
+  color: var(--text-color);
   line-height: 1.6;
 }
 
 a {
-  color: #1a73e8;
+  color: var(--accent-color);
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 a:hover {
-  color: #0d47a1;
+  color: var(--alternate-color);
 }
 
 /* Buttons */
@@ -67,19 +104,19 @@ a:hover {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #1a73e8, #0d47a1);
-  color: white;
+  background: linear-gradient(90deg, var(--accent-color) 0%, #e6c400 100%);
+  color: var(--text-color);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
   transform: translateY(-2px);
 }
 
 .btn-secondary {
-  background: #f0f0f0;
-  color: #333;
-  border: 1px solid #ddd;
+  background: var(--light-color);
+  color: var(--text-color);
+  border: 1px solid rgba(0,0,0,0.08);
 }
 
 .btn-secondary:hover {
@@ -170,7 +207,7 @@ section {
 }
 
 .text-muted {
-  color: #999;
+  color: var(--muted-color);
 }
 
 .mt-1 {

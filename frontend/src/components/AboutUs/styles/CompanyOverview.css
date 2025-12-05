@@ -1,6 +1,6 @@
 /* Company Overview Section */
 .company-overview {
-  background: linear-gradient(135deg, #000 0%, #0a0a0a 100%);
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--primary-dark) 100%);
   padding: 80px 0;
   position: relative;
 }
@@ -20,7 +20,7 @@
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 1.1em;
   line-height: 1.8;
-  color: #ddd;
+  color: var(--text-body);
   margin-bottom: 20px;
   text-align: justify;
   animation: fadeInUp 0.6s ease;
@@ -54,8 +54,8 @@
 }
 
 .value-card {
-  background: linear-gradient(135deg, rgba(14, 23, 255, 0.1) 0%, rgba(117, 13, 224, 0.1) 100%);
-  border: 1px solid rgba(14, 23, 255, 0.3);
+  background: linear-gradient(135deg, rgba(255, 212, 0, 0.1) 0%, rgba(255, 212, 0, 0.05) 100%);
+  border: 1px solid rgba(255, 212, 0, 0.2);
   padding: 25px;
   border-radius: 15px;
   transition: all 0.3s ease;
@@ -63,21 +63,21 @@
 }
 
 .value-card:hover {
-  background: linear-gradient(135deg, rgba(14, 23, 255, 0.2) 0%, rgba(117, 13, 224, 0.2) 100%);
-  border-color: rgba(14, 23, 255, 0.5);
+  background: linear-gradient(135deg, rgba(255, 212, 0, 0.15) 0%, rgba(255, 212, 0, 0.1) 100%);
+  border-color: rgba(255, 212, 0, 0.5);
   transform: translateY(-5px);
 }
 
 .value-icon {
   font-size: 2.5em;
-  color: #0E17FF;
+  color: var(--primary);
   margin-bottom: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 50px;
   height: 50px;
-  background: rgba(14, 23, 255, 0.1);
+  background: rgba(255, 212, 0, 0.1);
   border-radius: 50%;
 }
 
@@ -85,7 +85,7 @@
   font-family: 'Space Grotesk', sans-serif;
   font-size: 1.2em;
   font-weight: 600;
-  color: #fff;
+  color: var(--text-heading);
   margin-bottom: 12px;
 }
 
@@ -93,7 +93,7 @@
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.95em;
   line-height: 1.6;
-  color: #aaa;
+  color: var(--text-muted);
 }
 
 /* Animations */

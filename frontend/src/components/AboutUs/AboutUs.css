@@ -1,9 +1,32 @@
 :root {
-  --accent-color: #0E17FF;
-  --alternate-color: #750de0;
-  --dark-bg: #000;
-  --light-text: #fff;
-  --gray-text: #999;
+  /* Oregon Systems Dark Palette */
+  --primary: #FFD400;
+  --primary-dark: #0B0B0B;
+  --primary-light: #1F2937;
+  --primary-accent: #D5FFF8;
+
+  --bg-dark: #111827;
+  --bg-light: #F9FAFB;
+  --bg-card: #1F2937;
+  --border-light: #374151;
+
+  --text-heading: #FFFFFF;
+  --text-body: #9CA3AF;
+  --text-dark: #111827;
+  --text-muted: #6B7280;
+
+  --btn-primary: #FFD400;
+  --btn-primary-hover: #E6C400;
+  --btn-outline-border: #FFD400;
+  --btn-outline-hover-bg: #CCFFF7;
+
+  /* aliases for existing styles */
+  --accent-color: var(--primary);
+  --alternate-color: var(--primary-dark);
+  --dark-bg: var(--bg-dark);
+  --light-text: var(--bg-light);
+  --text-color: var(--text-dark);
+  --gray-text: var(--text-muted);
   --section-padding: 80px 0;
 }
 
