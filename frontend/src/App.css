@@ -14,8 +14,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-:root {
-  /* Oregon Systems Dark Palette */
+.App.dark {
   --primary: #FFD400;
   --primary-dark: #0B0B0B;
   --primary-light: #1F2937;
@@ -51,6 +50,42 @@ body {
   --muted-color: var(--text-muted);
 }
 
+.App.light {
+  --primary: #007bff;
+  --primary-dark: #0056b3;
+  --primary-light: #e6f2ff;
+  --primary-accent: #007bff;
+
+  --bg-dark: #ffffff;
+  --bg-light: #f8f9fa;
+  --bg-card: #ffffff;
+  --border-light: #dee2e6;
+
+  --text-heading: #343a40;
+  --text-body: #495057;
+  --text-dark: #212529;
+  --text-muted: #6c757d;
+
+  --btn-primary: #007bff;
+  --btn-primary-hover: #0069d9;
+  --btn-outline-border: #007bff;
+  --btn-outline-hover-bg: #e6f2ff;
+
+  --accent-mint: #20c997;
+  --accent-success: #28a745;
+  --accent-warning: #ffc107;
+  --accent-error: #dc3545;
+
+  /* Backwards-compatibility aliases */
+  --accent-color: var(--primary);
+  --alternate-color: var(--primary-dark);
+  --dark-color: var(--bg-dark);
+  --light-color: var(--bg-light);
+  --text-color: var(--text-dark);
+  --gray-text: var(--text-muted);
+  --muted-color: var(--text-muted);
+}
+
 .App {
   display: flex;
   flex-direction: column;
@@ -60,7 +95,7 @@ body {
 .main-content {
   flex: 1;
   width: 100%;
-  background-color: var(--light-color);
+  background-color: var(--dark-color);
 }
 
 /* Typography */

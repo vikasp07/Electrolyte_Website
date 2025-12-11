@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { ThemeContext } from "../../context/ThemeContext";
 import "./Navigation.css";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -52,6 +54,9 @@ const Navigation = () => {
           >
             Contact Us
           </a>
+          <button onClick={toggleTheme} className="theme-toggle-button">
+            {theme === 'light' ? 'Dark' : 'Light'} Mode
+          </button>
         </div>
 
         <div className="hamburger" onClick={toggleMenu}>
