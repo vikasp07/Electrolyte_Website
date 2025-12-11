@@ -1,6 +1,38 @@
+:root {
+  /* Oregon Systems Dark Palette */
+  --primary: #FFD400;
+  --primary-dark: #0B0B0B;
+  --primary-light: #1F2937;
+  --primary-accent: #D5FFF8;
+
+  --bg-dark: #111827;
+  --bg-light: #F9FAFB;
+  --bg-card: #1F2937;
+  --border-light: #374151;
+
+  --text-heading: #FFFFFF;
+  --text-body: #9CA3AF;
+  --text-dark: #111827;
+  --text-muted: #6B7280;
+
+  --btn-primary: #FFD400;
+  --btn-primary-hover: #E6C400;
+  --btn-outline-border: #FFD400;
+  --btn-outline-hover-bg: #CCFFF7;
+
+  /* aliases for existing styles */
+  --accent-color: var(--primary);
+  --alternate-color: var(--primary-dark);
+  --dark-color: var(--bg-dark);
+  --light-color: var(--bg-light);
+  --text-color: var(--text-dark);
+  --gray-text: var(--text-muted);
+  --transition: all 0.3s ease;
+}
+
 .vendors-page {
-  background-color: var(--bg-light);
-  color: var(--text-dark);
+  background-color: var(--dark-color);
+  color: var(--light-color);
 }
 
 .vendors-hero {
@@ -35,7 +67,7 @@
 
 .vendors-list h2 {
   font-size: 2.5rem;
-  color: var(--text-dark);
+  color: var(--text-heading);
   margin-bottom: 2rem;
   text-align: center;
   font-weight: 600;
@@ -50,9 +82,9 @@
 }
 
 .vendor-card {
-  background: var(--bg-light);
+  background: var(--bg-card);
   border-radius: 14px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--border-light);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
@@ -109,7 +141,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
+  background-color: var(--bg-card);
 }
 
 .card-front {
@@ -150,7 +182,7 @@
   right: 0;
   text-align: center;
   font-weight: 600;
-  color: var(--text-dark);
+  color: var(--text-heading);
   background: transparent;
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
@@ -184,7 +216,7 @@
   content: '✓';
   position: absolute;
   left: 0;
-  color: var(--accent-success);
+  color: var(--primary);
 }
 
 .vendor-cta {
