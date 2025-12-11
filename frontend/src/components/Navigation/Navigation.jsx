@@ -32,6 +32,13 @@ const Navigation = () => {
             About Us
           </Link>
           <Link
+            to="/vendors"
+            className="nav-link"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Vendors
+          </Link>
+          <Link
             to="/services"
             className="nav-link"
             onClick={() => setIsMenuOpen(false)}
