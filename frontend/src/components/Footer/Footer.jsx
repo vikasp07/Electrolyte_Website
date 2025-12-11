@@ -51,9 +51,11 @@ const Footer = () => {
 
           <div className="footer-section">
             <h4>Contact Info</h4>
-            <p>Email: info@electrolyte.com</p>
-            <p>Phone: +1 (555) 123-4567</p>
-            <p>Address: 123 Business St, Tech City</p>
+            <p>Email: contact@electrolytesolin.com</p>
+            <p>Phone: +91 9892686600</p>
+            <p>WhatsApp: +91 9029352208</p>
+            <p>Website: www.electrolytesolin.com</p>
+            <p>Address: Unit No. 11, 3rd Floor, B-Wing, Gami Industrial Park, ITC Industrial Area Pawane, MIDC, Navi Mumbai - 400 710</p>
           </div>
         </div>
 
