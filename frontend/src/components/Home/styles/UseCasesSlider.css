@@ -2,7 +2,11 @@
 
 .usecases-section {
   position: relative;
-  background: linear-gradient(180deg, rgba(17, 24, 39, 0.5) 0%, rgba(17, 24, 39, 0.7) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(17, 24, 39, 0.5) 0%,
+    rgba(17, 24, 39, 0.7) 100%
+  );
   padding: 80px 60px;
   overflow: hidden;
 }
@@ -185,7 +189,8 @@
 }
 
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -255,7 +260,6 @@
   right: 20px;
 }
 
-/* Section Bottom Coverage */
 .usecases-section .section-bottom-coverage {
   position: relative;
   margin: 40px -60px -0px -60px;

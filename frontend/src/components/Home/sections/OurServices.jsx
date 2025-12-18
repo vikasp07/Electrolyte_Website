@@ -1,68 +1,92 @@
-import React, { useRef } from 'react';
-import '../styles/OurServices.css';
+import React, { useRef, useState, useEffect } from "react";
+import "../styles/OurServices.css";
 
 const OurServices = () => {
   const sliderRef = useRef(null);
+  const [autoScroll, setAutoScroll] = useState(true);
 
   const services = [
     {
       id: 1,
-      title: 'LED & Video Wall Repair',
-      image: '/images/Resident-Engineer.jpg',
-      icon: 'ri-chat-smile-2-line',
-      link: '/Services#led-video-wall',
+      title: "Product Screening & Repair",
+      image: "/images/Services/service-1.jpg",
+      icon: "ri-tools-line",
+      link: "/services#product-screening",
     },
     {
       id: 2,
-      title: 'OEM Field Service & Warranty Support',
-      image: '/images/Training-Partner.jpg',
-      icon: 'ri-user-settings-line',
-      link: '/Services#oem-field-service',
+      title: "Product Refurbishment (ETN)",
+      image: "/images/Services/service-2.jpg",
+      icon: "ri-refresh-line",
+      link: "/services#product-refurbishment",
     },
     {
       id: 3,
-      title: 'PCB & Chip-Level Repair',
-      image: '/images/Consulting-Service.jpg',
-      icon: 'ri-pie-chart-line',
-      link: '/Services#pcb-chip-repair',
+      title: "Parts Cannibalization",
+      image: "/images/Services/service-3.jpg",
+      icon: "ri-settings-3-line",
+      link: "/services#parts-cannibalization",
     },
     {
       id: 4,
-      title: 'Product Refurbishment (ETN)',
-      image: '/images/Annual-maintainence.jpg',
-      icon: 'ri-git-branch-line',
-      link: '/Services#product-refurbishment',
+      title: "PCB & Component Level Repair",
+      image: "/images/Services/service-4.jpg",
+      icon: "ri-cpu-line",
+      link: "/services#pcb-repair",
     },
     {
       id: 5,
-      title: 'Parts Cannibalization & Parts Swap',
-      image: '/images/Cyber-Lab.jpg',
-      icon: 'ri-voiceprint-line',
-      link: '/Services#parts-cannibalization',
+      title: "Parts Swap Services",
+      image: "/images/Services/service-5.jpg",
+      icon: "ri-swap-line",
+      link: "/services#parts-swap",
     },
     {
       id: 6,
-      title: 'GAP Assessment',
-      image: '/images/Gap-Assessment-2.jpg',
-      icon: 'ri-openai-line',
-      link: '/Services#gap-assessment',
+      title: "Failure Analysis (FA)",
+      image: "/images/Services/service-6.jpg",
+      icon: "ri-search-line",
+      link: "/services#failure-analysis",
     },
   ];
 
   const scrollLeft = () => {
     if (sliderRef.current) {
-      sliderRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+      sliderRef.current.scrollBy({ left: -300, behavior: "smooth" });
     }
+    setAutoScroll(false);
   };
 
   const scrollRight = () => {
     if (sliderRef.current) {
-      sliderRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+      sliderRef.current.scrollBy({ left: 300, behavior: "smooth" });
     }
+    setAutoScroll(false);
   };
 
+  // Auto-scroll services slider with 1 second interval
+  useEffect(() => {
+    if (!autoScroll || !sliderRef.current) return;
+
+    const interval = setInterval(() => {
+      if (sliderRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current;
+        if (scrollLeft + clientWidth >= scrollWidth) {
+          sliderRef.current.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          sliderRef.current.scrollBy({ left: 300, behavior: "smooth" });
+        }
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [autoScroll]);
+
   return (
-    <section id="our-services-section" className="bt_bb_section our-services-section">
+    <section
+      id="our-services-section"
+      className="bt_bb_section our-services-section"
+    >
       <div className="our-services-content">
         {/* Section Header */}
         <div className="our-services-header">

@@ -4,16 +4,25 @@ import "./Navigation.css";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleDropdownToggle = (dropdown) => {
+    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
   };
 
   return (
     <nav className="navigation">
       <div className="nav-container">
         <Link to="/" className="nav-logo">
-          <span className="logo-text">Electrolyte</span>
+          <img
+            src="/images/Home/logo.png"
+            alt="Electrolyte"
+            className="logo-image"
+          />
         </Link>
 
         <div className={`nav-menu ${isMenuOpen ? "active" : ""}`}>
@@ -37,6 +46,13 @@ const Navigation = () => {
             onClick={() => setIsMenuOpen(false)}
           >
             Services
+          </Link>
+          <Link
+            to="/clients"
+            className="nav-link"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Clients
           </Link>
           <Link
             to="/contact"

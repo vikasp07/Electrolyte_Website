@@ -1,21 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import './Home.css';
-import HeroBanner from './sections/HeroBanner';
-import MissionVisionValues from './sections/MissionVisionValues';
-import SolutionsSlider from './sections/SolutionsSlider';
-import UseCasesSlider from './sections/UseCasesSlider';
-import OurServices from './sections/OurServices';
+import React, { useEffect, useState } from "react";
+import "./Home.css";
+import HeroBanner from "./sections/HeroBanner";
+import MissionVisionValues from "./sections/MissionVisionValues";
+
+import UseCasesSlider from "./sections/UseCasesSlider";
+import OurServices from "./sections/OurServices";
+import OurClients from "./sections/OurClients";
 
 const Home = () => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -29,14 +27,14 @@ const Home = () => {
             {/* Mission, Vision, Values Section */}
             <MissionVisionValues />
 
-            {/* Solutions Slider Section */}
-            <SolutionsSlider />
-
             {/* Use Cases Section */}
             <UseCasesSlider />
 
             {/* Our Services Section */}
             <OurServices />
+
+            {/* Our Clients Section */}
+            <OurClients />
           </div>
         </div>
       </article>

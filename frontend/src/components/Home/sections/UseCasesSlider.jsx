@@ -58,30 +58,18 @@ const UseCasesSlider = () => {
     },
   ];
 
-  // Auto-play slider
   useEffect(() => {
     if (!autoPlay) return;
 
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % useCases.length);
-    }, 6000);
+    }, 6000); // autoplay stays 6 seconds
 
     return () => clearInterval(interval);
   }, [autoPlay, useCases.length]);
 
-  const handlePrevious = () => {
-    setCurrentSlide((prev) => (prev === 0 ? useCases.length - 1 : prev - 1));
-    setAutoPlay(false);
-  };
-
-  const handleNext = () => {
-    setCurrentSlide((prev) => (prev + 1) % useCases.length);
-    setAutoPlay(false);
-  };
-
   return (
     <section id="usecases-section" className="bt_bb_section usecases-section">
-      {/* Background Image */}
       <div
         className="usecases-bg-image"
         style={{
@@ -90,45 +78,11 @@ const UseCasesSlider = () => {
       />
 
       <div className="usecases-content">
-        {/* Section Header */}
         <div className="usecases-header">
           <h3 className="usecases-title">Industry based Use Cases</h3>
         </div>
 
-        {/* Slider Container */}
         <div className="usecases-slider-wrapper">
-          {/* Social Icons */}
-          <div className="social-icons">
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="nofollow noopener noreferrer"
-              className="social-icon"
-              aria-label="Facebook"
-            >
-              <i className="ri-facebook-fill"></i>
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="nofollow noopener noreferrer"
-              className="social-icon"
-              aria-label="Twitter"
-            >
-              <i className="ri-twitter-x-line"></i>
-            </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="nofollow noopener noreferrer"
-              className="social-icon"
-              aria-label="Instagram"
-            >
-              <i className="ri-instagram-line"></i>
-            </a>
-          </div>
-
-          {/* Slider */}
           <div className="usecases-slider" ref={sliderRef}>
             {useCases.map((useCase, index) => (
               <div
@@ -142,7 +96,7 @@ const UseCasesSlider = () => {
                     index === currentSlide
                       ? "translateX(0)"
                       : "translateX(100%)",
-                  transition: "all 0.5s ease-in-out",
+                  transition: "all 2s ease-in-out", // UPDATED TO 2 SECONDS
                   position: index === currentSlide ? "relative" : "absolute",
                 }}
               >
@@ -169,7 +123,6 @@ const UseCasesSlider = () => {
             ))}
           </div>
 
-          {/* Bottom Arrow */}
           <div className="bottom-arrow">
             <a
               href="#our-services-section"
@@ -183,37 +136,9 @@ const UseCasesSlider = () => {
               />
             </a>
           </div>
-
-          {/* Counter */}
-          <div className="slider-counter">
-            <span className="counter-current">
-              {String(currentSlide + 1).padStart(2, "0")}
-            </span>
-            <span className="counter-separator">/</span>
-            <span className="counter-total">
-              {String(useCases.length).padStart(2, "0")}
-            </span>
-          </div>
-
-          {/* Slider Controls */}
-          <button
-            className="usecase-nav-btn usecase-nav-prev"
-            onClick={handlePrevious}
-            aria-label="Previous case study"
-          >
-            <i className="ri-arrow-left-s-line"></i>
-          </button>
-          <button
-            className="usecase-nav-btn usecase-nav-next"
-            onClick={handleNext}
-            aria-label="Next case study"
-          >
-            <i className="ri-arrow-right-s-line"></i>
-          </button>
         </div>
       </div>
 
-      {/* Bottom Coverage Image */}
       <div className="section-bottom-coverage">
         <img
           src="/images/Home/bottom_black_02-1.png"

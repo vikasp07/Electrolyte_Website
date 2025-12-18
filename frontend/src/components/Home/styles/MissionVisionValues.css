@@ -2,7 +2,11 @@
 
 .mvv-section {
   position: relative;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
   padding: 80px 60px;
   overflow: hidden;
 }
@@ -85,13 +89,18 @@
 }
 
 .mvv-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 212, 0, 0.15), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 212, 0, 0.15),
+    transparent
+  );
   transition: left 0.5s ease;
   z-index: 1;
 }
@@ -260,4 +269,22 @@
   .mvv-card-description {
     font-size: 0.85em;
   }
+}
+
+.mvv-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  /* background-attachment: fixed;  -- removed to avoid visual overlap on some devices/browsers */
+  z-index: 0;
+  opacity: 0.3;
+  pointer-events: none;
+}
+.mvv-content {
+  position: relative;
+  z-index: 2;
 }

@@ -1,13 +1,13 @@
 /* Oregon Systems Style - About Us Page */
 
 :root {
-  --primary: #FFD400;
+  --primary: #ffd400;
   --bg-dark: #111827;
-  --bg-light: #F9FAFB;
-  --bg-card: #1F2937;
-  --text-heading: #FFFFFF;
-  --text-body: #9CA3AF;
-  --text-muted: #6B7280;
+  --bg-light: #f9fafb;
+  --bg-card: #1f2937;
+  --text-heading: #ffffff;
+  --text-body: #9ca3af;
+  --text-muted: #6b7280;
   --border-light: #374151;
 }
 
@@ -36,7 +36,7 @@
   margin-bottom: 20px;
   text-align: center;
   color: var(--text-heading);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 .section-subtitle {
@@ -44,6 +44,21 @@
   text-align: center;
   color: var(--text-muted);
   margin-bottom: 50px;
+}
+
+/* Section Overlay for background images */
+.section-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(2px);
+  padding: 4rem 0;
+}
+
+.story-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* ============ MISSION & VISION ============ */
@@ -134,7 +149,11 @@
 .image-placeholder {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(255, 212, 0, 0.1) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--bg-card) 0%,
+    rgba(255, 212, 0, 0.1) 100%
+  );
   border: 1px solid var(--border-light);
   border-radius: 8px;
   display: flex;
@@ -148,13 +167,21 @@
 
 .story-image:hover .image-placeholder {
   border-color: var(--primary);
-  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(255, 212, 0, 0.2) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--bg-card) 0%,
+    rgba(255, 212, 0, 0.2) 100%
+  );
 }
 
 /* ============ VALUES ============ */
 .values-section {
   padding: 100px 0;
-  background: linear-gradient(180deg, rgba(31, 41, 55, 0.5) 0%, var(--bg-dark) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(31, 41, 55, 0.5) 0%,
+    var(--bg-dark) 100%
+  );
   border-top: 1px solid var(--border-light);
   border-bottom: 1px solid var(--border-light);
 }
@@ -238,7 +265,11 @@
 /* ============ PROCESS SECTION ============ */
 .process-section {
   padding: 100px 0;
-  background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(31, 41, 55, 0.5) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--bg-dark) 0%,
+    rgba(31, 41, 55, 0.5) 100%
+  );
   border-top: 1px solid var(--border-light);
 }
 
@@ -270,7 +301,7 @@
   font-weight: 700;
   color: var(--primary);
   margin-bottom: 15px;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 .process-step h4 {
@@ -391,7 +422,7 @@
 }
 
 .contact-box a:hover {
-  color: #FFE066;
+  color: #ffe066;
 }
 
 .small-btn {

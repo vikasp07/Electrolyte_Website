@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import './Services.css';
+import React, { useState, useEffect, useRef } from "react";
+import "./Services.css";
 
 const Services = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -12,59 +12,66 @@ const Services = () => {
       setScrollY(window.scrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const services = [
     {
       id: 1,
-      title: 'Product Screening & Repair',
-      description: 'Checking products, identifying faults, and repairing them to restore full functionality.',
-      image: '/images/Services/service-1.jpg',
-      delay: '0s',
+      title: "Product Screening & Repair",
+      description:
+        "Checking products, identifying faults, and repairing them to restore full functionality.",
+      image: "/images/Services/service-1.jpg",
+      delay: "0s",
     },
     {
       id: 2,
-      title: 'Product Refurbishment (ETN – Equal to New)',
-      description: 'Restoring damaged or returned units to a like-new condition.',
-      image: '/images/Services/service-2.jpg',
-      delay: '0.1s',
+      title: "Product Refurbishment (ETN – Equal to New)",
+      description:
+        "Restoring damaged or returned units to a like-new condition.",
+      image: "/images/Services/service-2.jpg",
+      delay: "0.1s",
     },
     {
       id: 3,
-      title: 'Parts Cannibalization',
-      description: 'Harvesting working components from defective/old units to repair other products.',
-      image: '/images/Services/service-3.jpg',
-      delay: '0.2s',
+      title: "Parts Cannibalization",
+      description:
+        "Harvesting working components from defective/old units to repair other products.",
+      image: "/images/Services/service-3.jpg",
+      delay: "0.2s",
     },
     {
       id: 4,
-      title: 'PCB / Component Level Repair',
-      description: 'L2/L3/L4 chip-level PCB diagnostics and repair instead of full board replacement.',
-      image: '/images/Services/service-4.jpg',
-      delay: '0.3s',
+      title: "PCB / Component Level Repair",
+      description:
+        "L2/L3/L4 chip-level PCB diagnostics and repair instead of full board replacement.",
+      image: "/images/Services/service-4.jpg",
+      delay: "0.3s",
     },
     {
       id: 5,
-      title: 'Parts Swap Services',
-      description: 'Replacing non-working parts with new or refurbished parts to quickly restore functionality.',
-      image: '/images/Services/service-5.jpg',
-      delay: '0.4s',
+      title: "Parts Swap Services",
+      description:
+        "Replacing non-working parts with new or refurbished parts to quickly restore functionality.",
+      image: "/images/Services/service-5.jpg",
+      delay: "0.4s",
     },
     {
       id: 6,
-      title: 'Failure Analysis (FA)',
-      description: 'Root-cause failure analysis performed on-site or at the facility to prevent repeat issues.',
-      image: '/images/Services/service-6.jpg',
-      delay: '0.5s',
+      title: "Failure Analysis (FA)",
+      description:
+        "Root-cause failure analysis performed on-site or at the facility to prevent repeat issues.",
+      image: "/images/Services/service-6.jpg",
+      delay: "0.5s",
     },
     {
       id: 7,
-      title: 'On-Site Sorting Services',
-      description: 'Sorting defective, refurbishable, and scrap items at the client\'s warehouse.',
-      image: '/images/Services/service-7.jpg',
-      delay: '0.6s',
+      title: "On-Site Sorting Services",
+      description:
+        "Sorting defective, refurbishable, and scrap items at the client's warehouse.",
+      image: "/images/Services/service-7.jpg",
+      delay: "0.6s",
     },
   ];
 
@@ -119,7 +126,13 @@ const Services = () => {
             <section
               id="services_banner_section"
               className="bt_bb_section services-hero-banner"
-              style={handleParallax()}
+              style={{
+                ...handleParallax(),
+                backgroundImage: 'url("/images/Home/hero-banner.jpg")',
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
             >
               <div className="services-hero-bg" />
 
@@ -139,7 +152,9 @@ const Services = () => {
 
                     {/* Subheadline */}
                     <h3 className="services-hero-description animate-in">
-                      Comprehensive repair and refurbishment solutions designed to extend the lifecycle of your critical electronics and maximize operational efficiency.
+                      Comprehensive repair and refurbishment solutions designed
+                      to extend the lifecycle of your critical electronics and
+                      maximize operational efficiency.
                     </h3>
 
                     {/* Separator */}
@@ -159,10 +174,15 @@ const Services = () => {
             </section>
 
             {/* Services Carousel Section */}
-            <section id="services-carousel-section" className="bt_bb_section services-carousel-section">
+            <section
+              id="services-carousel-section"
+              className="bt_bb_section services-carousel-section"
+            >
               <div className="container">
                 <div className="carousel-section-header">
-                  <h2 className="carousel-section-title">Explore Our Services</h2>
+                  <h2 className="carousel-section-title">
+                    Explore Our Services
+                  </h2>
                 </div>
 
                 {/* Circular Carousel */}
@@ -182,9 +202,11 @@ const Services = () => {
                       {getVisibleServices().map((service, index) => (
                         <div
                           key={service.id}
-                          className={`carousel-item ${index === 1 ? 'active' : ''} ${
-                            index === 0 ? 'prev' : ''
-                          } ${index === 2 ? 'next' : ''}`}
+                          className={`carousel-item ${
+                            index === 1 ? "active" : ""
+                          } ${index === 0 ? "prev" : ""} ${
+                            index === 2 ? "next" : ""
+                          }`}
                         >
                           <ServiceCarouselCard service={service} />
                         </div>
@@ -207,7 +229,9 @@ const Services = () => {
                   {services.map((_, index) => (
                     <button
                       key={index}
-                      className={`indicator ${index === currentIndex ? 'active' : ''}`}
+                      className={`indicator ${
+                        index === currentIndex ? "active" : ""
+                      }`}
                       onClick={() => {
                         setCurrentIndex(index);
                         setAutoPlay(false);
@@ -221,7 +245,10 @@ const Services = () => {
             </section>
 
             {/* Services Grid Section */}
-            <section id="services-grid-section" className="bt_bb_section services-grid-section">
+            <section
+              id="services-grid-section"
+              className="bt_bb_section services-grid-section"
+            >
               <div className="container">
                 {/* Services Grid */}
                 <div className="services-grid">
@@ -243,10 +270,15 @@ const ServiceCard = ({ service }) => {
   return (
     <div
       className="service-card animate-in"
-      style={{ '--animation-delay': service.delay }}
+      style={{ "--animation-delay": service.delay }}
     >
       <div className="service-card-image-wrapper">
-        <img src={service.image} alt={service.title} loading="lazy" className="service-card-image" />
+        <img
+          src={service.image}
+          alt={service.title}
+          loading="lazy"
+          className="service-card-image"
+        />
         <div className="service-card-overlay" />
       </div>
       <div className="service-card-content">

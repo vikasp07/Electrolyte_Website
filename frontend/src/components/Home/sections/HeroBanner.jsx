@@ -3,6 +3,8 @@ import "../styles/HeroBanner.css";
 
 const HeroBanner = ({ scrollY }) => {
   const [rotatingWordIndex, setRotatingWordIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
 
   const rotatingWords = [
     "LED Video Walls",
@@ -11,16 +13,35 @@ const HeroBanner = ({ scrollY }) => {
   ];
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setRotatingWordIndex((prev) => (prev + 1) % rotatingWords.length);
-    }, 3000);
+    const currentWord = rotatingWords[rotatingWordIndex];
+    const typingSpeed = isDeleting ? 50 : 100;
+    const delayBetweenWords = 2000;
 
-    return () => clearInterval(interval);
-  }, [rotatingWords.length]);
+    const timer = setTimeout(() => {
+      if (!isDeleting) {
+        if (displayText.length < currentWord.length) {
+          setDisplayText(currentWord.substring(0, displayText.length + 1));
+        } else {
+          setIsDeleting(true);
+          setTimeout(() => {
+            setRotatingWordIndex((prev) => (prev + 1) % rotatingWords.length);
+          }, delayBetweenWords);
+        }
+      } else {
+        if (displayText.length > 0) {
+          setDisplayText(displayText.substring(0, displayText.length - 1));
+        } else {
+          setIsDeleting(false);
+        }
+      }
+    }, isDeleting || displayText.length === 0 ? typingSpeed : displayText.length === currentWord.length ? delayBetweenWords : typingSpeed);
+
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting, rotatingWordIndex, rotatingWords]);
 
   const handleParallax = () => {
     return {
-      transform: `translateY(${scrollY * 0.5}px)`,
+      transform: `translateY(0)`,
     };
   };
 
@@ -30,7 +51,19 @@ const HeroBanner = ({ scrollY }) => {
       className="bt_bb_section hero-banner"
       style={handleParallax()}
     >
-      {/* Background Video/Image */}
+      {/* Background Video */}
+      <video 
+        className="hero-banner-video"
+        autoPlay
+        muted
+        loop
+        playsInline
+      >
+        <source src="/vedio/video-banner.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      
+      {/* Background Overlay */}
       <div className="hero-banner-bg" />
 
       <div className="hero-banner-content">
@@ -49,16 +82,8 @@ const HeroBanner = ({ scrollY }) => {
               <h2 className="hero-banner-subtitle">
                 <span>Specializing in</span>
                 <div className="rotating-words-wrapper">
-                  {rotatingWords.map((word, index) => (
-                    <span
-                      key={index}
-                      className={`rotating-word ${
-                        index === rotatingWordIndex ? "active" : ""
-                      }`}
-                    >
-                      {word}
-                    </span>
-                  ))}
+                  <span className="rotating-word active">{displayText}</span>
+                  <span className="typing-cursor">|</span>
                 </div>
               </h2>
             </div>
