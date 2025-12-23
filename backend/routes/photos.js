@@ -1,7 +1,7 @@
 // routes/photos.js
 const express = require("express");
 const router = express.Router();
-const Photo = require("../models/Photo");
+const Photo = require("../models/Photos");
 const auth = require("../middleware/auth");
 const multer = require("multer");
 const path = require("path");

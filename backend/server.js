@@ -23,6 +23,7 @@ app.use("/uploads", express.static(uploadsDir));
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/photos", require("./routes/photos"));
 app.use("/api/sponsors", require("./routes/sponsors"));
+app.use("/api/contact", require("./routes/contact"));
 
 // health
 app.get("/api/health", (req, res) => res.json({ ok: true, time: new Date() }));
