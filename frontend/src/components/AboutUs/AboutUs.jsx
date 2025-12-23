@@ -386,7 +386,7 @@ const AboutUs = () => {
                     <span>Email</span>
                   </a>
                   <a
-                    href="https://www.linkedin.com/company/electrolytesoln"
+                    href="https://www.linkedin.com/company/electrolyte-solutions/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social-card"

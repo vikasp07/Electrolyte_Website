@@ -81,7 +81,7 @@ const Contact = () => {
 
   const vcardHref = "/contact.vcf";
   const scheduleHref = `mailto:${COMPANY.email}?subject=Schedule%20Meeting&body=Hi%20${COMPANY.name}%2C%0A%0AI%20would%20like%20to%20schedule%20a%20meeting.`;
-  const linkedInHref = "https://www.linkedin.com/company/electrolytesoln";
+  const linkedInHref = "https://www.linkedin.com/company/electrolyte-solutions/";
   const chatHref = `https://wa.me/${COMPANY.whatsapp.replace(/\D/g, "")}`;
 
   return (
