@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import HeroBanner from "./sections/HeroBanner";
+import MissionVisionValues from "../Home/sections/MissionVisionValues";
+import AboutOverview from "./AboutOverview";
 import "./AboutUs.css";
 
 const COMPANY = {
@@ -125,21 +127,11 @@ const AboutUs = () => {
     <div className="about-us-container">
       <HeroBanner scrollY={scrollY} />
 
-      {/* Mission & Vision Section */}
-      <section className="mission-vision-section">
-        <div className="container">
-          <div className="mission-vision-content">
-            <div className="mission-box">
-              <h3>Our Mission</h3>
-              <p>{COMPANY.mission}</p>
-            </div>
-            <div className="vision-box">
-              <h3>Our Vision</h3>
-              <p>{COMPANY.vision}</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Mission, Vision, Values Section */}
+      <MissionVisionValues />
+
+      {/* About Overview Section */}
+      <AboutOverview />
 
       {/* About Story Section */}
       <section className="about-story-section">

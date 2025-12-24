@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
 import HeroBanner from "./sections/HeroBanner";
-import MissionVisionValues from "./sections/MissionVisionValues";
 
 import UseCasesSlider from "./sections/UseCasesSlider";
 import OurServices from "./sections/OurServices";
@@ -23,9 +22,6 @@ const Home = () => {
           <div className="entry-content-inner">
             {/* Hero Banner Section */}
             <HeroBanner scrollY={scrollY} />
-
-            {/* Mission, Vision, Values Section */}
-            <MissionVisionValues />
 
             {/* Use Cases Section */}
             <UseCasesSlider />

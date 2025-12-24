@@ -6,21 +6,21 @@ const MissionVisionValues = () => {
     {
       id: "mission",
       title: "Mission",
-      image: "/images/Home/mission-white-160x160.png",
+      image: "/images/AboutUs/mission-white-160x160.png",
       description:
         "Our expert technicians restore broken electronics to working condition through component-level repairs. Serving businesses across India with rapid turnaround times.",
     },
     {
       id: "vision",
       title: "Vision",
-      image: "/images/Home/vission-white-160x160.png",
+      image: "/images/AboutUs/vission-white-160x160.png",
       description:
         "To become India's leading electronics repair and refurbishment specialist, known for quality workmanship and customer service excellence.",
     },
     {
       id: "values",
       title: "Values",
-      image: "/images/Home/value-white-160x160.png",
+      image: "/images/AboutUs/value-white-160x160.png",
       description:
         "Integrity in repairs, reliability in service, and commitment to extending the life of quality devices that matter to our customers.",
     },
@@ -32,7 +32,7 @@ const MissionVisionValues = () => {
       <div
         className="mvv-bg-image"
         style={{
-          backgroundImage: "url('/images/Home/mission-vision.jpg')",
+          backgroundImage: "url('/images/AboutUs/mission-vision.jpg')",
         }}
       />
 
@@ -68,7 +68,7 @@ const MissionVisionValues = () => {
 
       {/* Bottom Coverage Image */}
       <div className="section-bottom-coverage">
-        <img src="/images/Home/bottom_black.png" alt="wave" loading="lazy" />
+        <img src="/images/AboutUs/bottom_black.png" alt="wave" loading="lazy" />
       </div>
     </section>
   );

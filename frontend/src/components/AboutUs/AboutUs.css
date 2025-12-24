@@ -633,3 +633,76 @@
     width: 100%;
   }
 }
+
+/* ============ ABOUT OVERVIEW SECTION ============ */
+
+.about-overview-section {
+  padding: 100px 0;
+  background: var(--bg-dark);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.about-description {
+  max-width: 900px;
+  margin: 0 auto 60px;
+}
+
+.about-description p {
+  font-size: 1.05em;
+  line-height: 1.8;
+  color: var(--text-body);
+  margin-bottom: 18px;
+}
+
+.capabilities-title {
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-align: center;
+  color: var(--text-heading);
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.capability-card {
+  background: rgba(31, 41, 55, 0.6);
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--primary);
+  border-radius: 8px;
+  padding: 35px 30px;
+  transition: all 0.3s ease;
+}
+
+.capability-card:hover {
+  background: rgba(31, 41, 55, 0.9);
+  border-color: var(--primary);
+  transform: translateY(-6px);
+}
+
+.capability-card h4 {
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-heading);
+}
+
+.capability-card p {
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: var(--text-body);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .capabilities-title {
+    font-size: 1.6em;
+  }
+}

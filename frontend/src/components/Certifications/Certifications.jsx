@@ -44,6 +44,10 @@ const Certifications = () => {
               <h3>ISO 45001:2018</h3>
               <p>Occupational Health and Safety</p>
             </div>
+            <div className="certification-item">
+              <h3>ZED Bronze Certified</h3>
+              <p>MSME Sustainable ZED Scheme - Zero Defect–Zero Effect principles</p>
+            </div>
           </div>
         </div>
       </section>
