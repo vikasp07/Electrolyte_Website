@@ -158,9 +158,9 @@ const StatCounter = ({ icon, label, value, dataIcon }) => {
         <i className={`ri-${dataIcon}`} style={{ fontSize: "2.5em" }}></i>
       </div>
       <div className="separator separator-small" />
-      <h4 className="stat-counter-label">{label}</h4>
-      <div className="separator separator-small" />
       <div className="stat-counter-value">{value}</div>
+      <div className="separator separator-small" />
+      <h4 className="stat-counter-label">{label}</h4>
     </div>
   );
 };
