@@ -94,12 +94,6 @@ const Contact = () => {
             <section
               id="contact_banner_section"
               className="bt_bb_section contact-hero-banner"
-              style={{
-                backgroundImage: 'url("/images/Home/hero-banner.jpg")',
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-              }}
             >
               <div className="contact-hero-bg" />
 

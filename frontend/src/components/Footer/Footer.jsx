@@ -1,76 +1,57 @@
-import React from "react";
 import "./Footer.css";
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
+export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <div className="footer-content">
-          <div className="footer-section">
-            <h3>Electrolyte</h3>
-            <p>Leading solutions for your business needs.</p>
-          </div>
-
-          <div className="footer-section">
-            <h4>Quick Links</h4>
-            <ul>
-              <li>
-                <a href="/">Home</a>
-              </li>
-              <li>
-                <a href="/about">About Us</a>
-              </li>
-              <li>
-                <a href="#services">Services</a>
-              </li>
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="footer-section">
-            <h4>Services</h4>
-            <ul>
-              <li>
-                <a href="#services">Consulting</a>
-              </li>
-              <li>
-                <a href="#services">Development</a>
-              </li>
-              <li>
-                <a href="#services">Support</a>
-              </li>
-              <li>
-                <a href="#services">Training</a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="footer-section">
-            <h4>Contact Info</h4>
-            <p>Email: contact@electrolytesolin.com</p>
-            <p>Phone: +91 9892686600</p>
-            <p>WhatsApp: +91 9029352208</p>
-            <p>Website: www.electrolytesolin.com</p>
-            <p>Address: Unit No. 11, 3rd Floor, B-Wing, Gami Industrial Park, ITC Industrial Area Pawane, MIDC, Navi Mumbai - 400 710</p>
-          </div>
+        {/* Column 1 */}
+        <div className="footer-col">
+          <h4>Electrolyte Solutions</h4>
+          <ul>
+            <li>Advanced PCB Repair &</li>
+            <li>Refurbishment for OEMs and</li>
+            <li>Electronics Brands</li>
+            <li className="highlight">ISO 9001:2015 Certified</li>
+          </ul>
         </div>
 
-        <div className="footer-bottom">
-          <p>
-            &copy; {currentYear} Electrolyte Solutions. All rights reserved.
-          </p>
-          <div className="footer-links">
-            <a href="#privacy">Privacy Policy</a>
-            <a href="#terms">Terms of Service</a>
-          </div>
+        {/* Column 2 */}
+        <div className="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li>L3 & L4 PCB Repair</li>
+            <li>PCB Refurbishment</li>
+            <li>Embedded Diagnostics</li>
+            <li>Component-Level Rework</li>
+          </ul>
         </div>
+
+        {/* Column 3 */}
+        <div className="footer-col">
+          <h4>Industries</h4>
+          <ul>
+            <li>Consumer Electronics</li>
+            <li>Home Appliances</li>
+            <li>LED & Power Electronics</li>
+            <li>IoT Devices</li>
+          </ul>
+        </div>
+
+        {/* Column 4 */}
+        <div className="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li>About Us</li>
+            <li>Quality & Infrastructure</li>
+            <li>Contact</li>
+            <li>Request Facility Audit</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="footer-bottom">
+        © 2025 Electrolyte Solutions. All rights reserved. | Advanced PCB Repair Services India
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
