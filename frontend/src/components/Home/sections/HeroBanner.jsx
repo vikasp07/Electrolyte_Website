@@ -118,27 +118,21 @@ const HeroBanner = ({ scrollY }) => {
         {/* Statistics/Counters Section */}
         <div className="hero-banner-stats">
           <StatCounter
-            icon="S"
-            label="CUSTOMERS"
-            value="2500+"
+            icon="+"
+            label="PCBs Repaired Monthly"
+            value="18,000+"
             dataIcon="remixiconsbusiness"
           />
           <StatCounter
-            icon="-"
-            label="PARTNERS"
-            value="1500+"
+            icon="%"
+            label="Average Recovery Rate"
+            value="85%"
             dataIcon="remixiconsuser"
           />
           <StatCounter
-            icon="+"
-            label="DEPLOYMENTS"
-            value="15000+"
-            dataIcon="remixiconsfinance"
-          />
-          <StatCounter
-            icon="+"
-            label="COUNTRIES"
-            value="21+"
+            icon="%"
+            label="Cost Reduction vs New PCBs"
+            value="85%"
             dataIcon="remixiconsfinance"
           />
         </div>
