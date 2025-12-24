@@ -48,6 +48,13 @@ const Navigation = () => {
             Services
           </Link>
           <Link
+            to="/certifications"
+            className="nav-link"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Certifications
+          </Link>
+          <Link
             to="/clients"
             className="nav-link"
             onClick={() => setIsMenuOpen(false)}

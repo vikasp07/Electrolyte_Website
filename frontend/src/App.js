@@ -12,6 +12,7 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import Services from "./components/Services/Services";
 import Contact from "./components/Contact/Contact";
 import Clients from "./components/Vendors/Vendors";
+import Certifications from "./components/Certifications/Certifications";
 import "./App.css";
 
 // Component to handle scroll to top on route change
@@ -36,6 +37,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/certifications" element={<Certifications />} />
             <Route path="/clients" element={<Clients />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
