@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Services.css";
+import Industries from "./Industries";
+import QualitySystems from "./QualitySystems";
 
 const Services = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -172,6 +174,58 @@ const Services = () => {
                 />
               </div>
             </section>
+
+            {/* New Services Section */}
+            <section className="services-section">
+              <h2 className="services-title">Our Services</h2>
+              <p className="services-subtitle">
+                Comprehensive PCB repair and refurbishment solutions
+              </p>
+
+              <div className="services-grid">
+                {/* Card 1 */}
+                <div className="service-card">
+                  <h3>L3 & L4 PCB Repair</h3>
+                  <ul>
+                    <li>Micro-soldering and fine-pitch component repair</li>
+                    <li>BGA, QFN, and complex IC rework</li>
+                    <li>Power, control, and communication circuit repair</li>
+                    <li>SMD and through-hole component replacement</li>
+                    <li>Multilayer board trace repair</li>
+                  </ul>
+                </div>
+
+                {/* Card 2 */}
+                <div className="service-card">
+                  <h3>PCB Refurbishment & Rework</h3>
+                  <ul>
+                    <li>Deep cleaning and coating removal</li>
+                    <li>Connector, relay, and capacitor replacement</li>
+                    <li>Barcode and QR regeneration with traceability</li>
+                    <li>Conformal coating reapplication</li>
+                    <li>Cosmetic and functional restoration</li>
+                  </ul>
+                </div>
+
+                {/* Card 3 */}
+                <div className="service-card">
+                  <h3>Embedded System Diagnostics</h3>
+                  <ul>
+                    <li>Firmware flashing and validation</li>
+                    <li>Functional and load testing</li>
+                    <li>Intermittent fault isolation and validation</li>
+                    <li>Protocol and communication testing</li>
+                    <li>End-of-line testing and certification</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            {/* Industries Section */}
+            <Industries />
+
+            {/* Quality Systems Section */}
+            <QualitySystems />
 
             {/* Services Carousel Section */}
             <section

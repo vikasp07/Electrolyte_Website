@@ -9,7 +9,7 @@
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 0.075rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,15 +26,15 @@
 }
 
 .logo-image {
-  height: 100px;
+  height: 80px;
   width: auto;
-  object-fit: contain;
+  object-fit: fill;
   transition: transform 0.5s ease;
   cursor: pointer;
 }
 
 .logo-image:hover {
-  transform: scale(1.5);
+  transform: scale(1.1);
 }
 
 .nav-menu {
@@ -255,10 +255,10 @@
   }
 
   .nav-container {
-    padding: 1rem 1.5rem;
+    padding: 0.075rem 1.5rem;
   }
 
   .logo-image {
-    height: 80px;
+    height: 60px;
   }
 }
