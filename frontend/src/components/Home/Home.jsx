@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
 import HeroBanner from "./sections/HeroBanner";
-
+import OemTrust from "./sections/OemTrust";
 import UseCasesSlider from "./sections/UseCasesSlider";
 import OurServices from "./sections/OurServices";
 import OurClients from "./sections/OurClients";
@@ -22,6 +22,9 @@ const Home = () => {
           <div className="entry-content-inner">
             {/* Hero Banner Section */}
             <HeroBanner scrollY={scrollY} />
+
+            {/* OEM Trust Section */}
+            <OemTrust />
 
             {/* Use Cases Section */}
             <UseCasesSlider />
