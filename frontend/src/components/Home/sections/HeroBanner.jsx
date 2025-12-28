@@ -93,9 +93,7 @@ const HeroBanner = ({ scrollY }) => {
 
             {/* Subheadline */}
             <h3 className="hero-banner-description animate-in">
-              Dedicated to protecting operational technology and critical
-              infrastructure with robust solutions tailored to tomorrow's
-              challenges.
+              ISO & ZED certified L3/L4 repair service for OEMs
             </h3>
 
             {/* Separator */}
@@ -119,8 +117,8 @@ const HeroBanner = ({ scrollY }) => {
         <div className="hero-banner-stats">
           <StatCounter
             icon="+"
-            label="PCBs Repaired Monthly"
-            value="18,000+"
+            label="PCB Refurbishment Capacity / Month"
+            value="15,000+"
             dataIcon="remixiconsbusiness"
           />
           <StatCounter
@@ -131,8 +129,8 @@ const HeroBanner = ({ scrollY }) => {
           />
           <StatCounter
             icon="%"
-            label="Cost Reduction vs New PCBs"
-            value="85%"
+            label="Cost saving Vs new PCB purchase"
+            value="75%"
             dataIcon="remixiconsfinance"
           />
         </div>

@@ -17,7 +17,7 @@ export default function OemTrust() {
 
         <div className="hero-buttons">
           <button className="btn-primary">Request Technical Discussion</button>
-          <button className="btn-secondary">Book Facility Audit</button>
+          <button className="btn-secondary">Book for facility visit</button>
         </div>
 
         <div className="hero-badges">
