@@ -1,60 +1,63 @@
 import React, { useRef, useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/UseCasesSlider.css";
 
 const UseCasesSlider = () => {
   const sliderRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [autoPlay, setAutoPlay] = useState(true);
+  const navigate = useNavigate();
 
-  const useCases = [
+  // Blog posts data - keeping the same UI structure
+  const blogPosts = [
     {
       id: 1,
       title:
-        "Secure File Transfer and Syslog Replication Using Owl Data Diodes",
+        "The Future of Cybersecurity: Data Diodes and Zero Trust Architecture",
       description:
-        "This case study outlines the implementation of a secure file transfer and syslog replication solution using Owl Cyber Defense data...",
+        "Explore how data diodes are becoming essential components in modern zero trust security frameworks, providing unidirectional data transfer for critical infrastructure...",
       image:
         "/images/Home/Secure-File-Transfer-and-Syslog-Replication-Using-Owl-Data-Diodes.jpg",
-      link: "/case-study-grid",
-      tagline: "",
+      link: "/blog/1",
+      tagline: "Cybersecurity",
     },
     {
       id: 2,
-      title: "Case Study: OSI PI Historian Replication Using OWL Data Diodes",
+      title: "Securing Industrial Control Systems: Best Practices for OT Security",
       description:
-        "This case study examines the implementation of OSI PI Historian replication using Owl Cyber Defense data diodes to ensure unidirectional...",
+        "Learn about the critical importance of securing operational technology environments and the best practices for protecting industrial control systems from cyber threats...",
       image:
         "/images/Home/OSI-PI-Historian-Replication-Using-OWL-Data-Diodes.jpg",
-      link: "/case-study-grid",
-      tagline: "",
+      link: "/blog/2",
+      tagline: "Industrial Security",
     },
     {
       id: 3,
-      title: "Secure OPC Data Replication Using Owl Data Diodes",
+      title: "OPC UA Security: Protecting Industrial Communications",
       description:
-        "This case study showcases the implementation of a secure OPC data replication solution using Owl Cyber Defense data diodes.",
+        "Discover how to secure OPC UA communications in industrial environments using hardware-based security solutions and best practices...",
       image:
         "/images/Home/Secure-OPC-Data-Replication-Using-Owl-Data-Diodes.jpg",
-      link: "/case-study-grid",
-      tagline: "",
+      link: "/blog/3",
+      tagline: "Industrial Protocols",
     },
     {
       id: 4,
-      title: "Database Replication Using Data Diodes",
+      title: "Database Replication Security: Ensuring Data Integrity Across Networks",
       description:
-        "This case study explores how Owl Cyber Defense's data diodes enable secure database replication by ensuring unidirectional data transfer.",
+        "Learn how to implement secure database replication across network boundaries while maintaining data integrity and protecting sensitive information...",
       image: "/images/Home/Database-Replication-Using-Data-Diodes.jpg",
-      link: "/case-study-grid",
-      tagline: "",
+      link: "/blog/4",
+      tagline: "Data Security",
     },
     {
       id: 5,
-      title: "Securing Critical CCTV Networks and Enterprise",
+      title: "CCTV Network Security: Protecting Surveillance Systems from Cyber Threats",
       description:
-        "This use case explores how OWL Cyber Defense solutions, specifically Data Diodes and Perimeter Defense Solutions (OPDS)",
+        "Explore the critical importance of securing CCTV networks and learn how to protect surveillance systems from cyber attacks while maintaining operational effectiveness...",
       image: "/images/Home/Securing-Critical-CCTV-Networks-and-Enterprise.jpg",
-      link: "/case-study-grid",
-      tagline: "Explore Tranquility",
+      link: "/blog/5",
+      tagline: "Physical Security",
     },
   ];
 
@@ -62,14 +65,18 @@ const UseCasesSlider = () => {
     if (!autoPlay) return;
 
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % useCases.length);
+      setCurrentSlide((prev) => (prev + 1) % blogPosts.length);
     }, 6000); // autoplay stays 6 seconds
 
     return () => clearInterval(interval);
-  }, [autoPlay, useCases.length]);
+  }, [autoPlay, blogPosts.length]);
+
+  const handleBlogClick = (link) => {
+    navigate(link);
+  };
 
   return (
-    <section id="usecases-section" className="bt_bb_section usecases-section">
+    <section id="blog-section" className="bt_bb_section usecases-section">
       <div
         className="usecases-bg-image"
         style={{
@@ -79,14 +86,17 @@ const UseCasesSlider = () => {
 
       <div className="usecases-content">
         <div className="usecases-header">
-          <h3 className="usecases-title">Industry based Use Cases</h3>
+          <h3 className="usecases-title">Latest from Our Blog</h3>
+          <Link to="/blog" className="view-all-blogs-btn">
+            View All Blogs <i className="ri-arrow-right-line"></i>
+          </Link>
         </div>
 
         <div className="usecases-slider-wrapper">
           <div className="usecases-slider" ref={sliderRef}>
-            {useCases.map((useCase, index) => (
+            {blogPosts.map((post, index) => (
               <div
-                key={useCase.id}
+                key={post.id}
                 className={`usecase-slide ${
                   index === currentSlide ? "active" : ""
                 }`}
@@ -101,22 +111,22 @@ const UseCasesSlider = () => {
                 }}
               >
                 <div className="usecase-slide-content">
-                  <div className="usecase-image">
+                  <div className="usecase-image" onClick={() => handleBlogClick(post.link)}>
                     <img
-                      src={useCase.image}
-                      alt={useCase.title}
+                      src={post.image}
+                      alt={post.title}
                       loading="lazy"
                     />
                   </div>
                   <div className="usecase-info animate-bottom">
-                    {useCase.tagline && (
-                      <p className="usecase-tagline">{useCase.tagline}</p>
+                    {post.tagline && (
+                      <p className="usecase-tagline">{post.tagline}</p>
                     )}
-                    <h2 className="usecase-title">{useCase.title}</h2>
-                    <p className="usecase-description">{useCase.description}</p>
-                    <a href={useCase.link} className="btn-usecase">
-                      View More <i className="ri-arrow-right-long-line"></i>
-                    </a>
+                    <h2 className="usecase-title">{post.title}</h2>
+                    <p className="usecase-description">{post.description}</p>
+                    <Link to={post.link} className="btn-usecase">
+                      Read More <i className="ri-arrow-right-long-line"></i>
+                    </Link>
                   </div>
                 </div>
               </div>

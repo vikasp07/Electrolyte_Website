@@ -62,6 +62,13 @@ const Navigation = () => {
             Clients
           </Link>
           <Link
+            to="/blog"
+            className="nav-link"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Blog
+          </Link>
+          <Link
             to="/contact"
             className="nav-link cta-button"
             onClick={() => setIsMenuOpen(false)}

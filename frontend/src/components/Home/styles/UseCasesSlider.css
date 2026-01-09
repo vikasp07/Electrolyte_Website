@@ -34,6 +34,11 @@
 .usecases-header {
   text-align: left;
   margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .usecases-title {
@@ -43,6 +48,36 @@
   font-family: var(--heading-font);
   letter-spacing: -1px;
   margin: 0;
+}
+
+.view-all-blogs-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 25px;
+  background: rgba(255, 212, 0, 0.1);
+  border: 1px solid rgba(255, 212, 0, 0.3);
+  border-radius: 25px;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.95em;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.view-all-blogs-btn:hover {
+  background: var(--primary);
+  color: var(--bg-dark);
+  transform: translateX(5px);
+}
+
+.view-all-blogs-btn i {
+  font-size: 1.1em;
+  transition: transform 0.3s ease;
+}
+
+.view-all-blogs-btn:hover i {
+  transform: translateX(3px);
 }
 
 /* Slider Wrapper */
@@ -114,6 +149,7 @@
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(255, 212, 0, 0.15);
+  cursor: pointer;
 }
 
 .usecase-image img {
@@ -125,6 +161,10 @@
 
 .usecase-slide.active .usecase-image img {
   transform: scale(1.05);
+}
+
+.usecase-image:hover img {
+  transform: scale(1.1);
 }
 
 .usecase-info {
