@@ -15,6 +15,11 @@ import Clients from "./components/Vendors/Vendors";
 import Certifications from "./components/Certifications/Certifications";
 import Blog from "./components/Blog/Blog";
 import "./App.css";
+// Admin pages (isolated)
+import AdminLogin from "./admin/pages/Login";
+import AdminBlogList from "./admin/pages/BlogList";
+import AdminBlogEditor from "./admin/pages/BlogEditor";
+import { ProtectedRoute } from "./admin/routes";
 
 // Component to handle scroll to top on route change
 const ScrollToTop = () => {
@@ -41,8 +46,34 @@ function App() {
             <Route path="/certifications" element={<Certifications />} />
             <Route path="/clients" element={<Clients />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:id" element={<Blog />} />
+            <Route path="/blog/:slug" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
+            {/* Admin routes - isolated namespace */}
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route
+              path="/admin/blogs"
+              element={
+                <ProtectedRoute>
+                  <AdminBlogList />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/blogs/new"
+              element={
+                <ProtectedRoute>
+                  <AdminBlogEditor />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/blogs/:id/edit"
+              element={
+                <ProtectedRoute>
+                  <AdminBlogEditor />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </main>
         <Footer />

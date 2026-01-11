@@ -24,6 +24,7 @@ app.use("/api/auth", require("./routes/auth"));
 app.use("/api/photos", require("./routes/photos"));
 app.use("/api/sponsors", require("./routes/sponsors"));
 app.use("/api/contact", require("./routes/contact"));
+app.use("/api/blogs", require("./routes/blogs"));
 
 // health
 app.get("/api/health", (req, res) => res.json({ ok: true, time: new Date() }));
@@ -48,6 +49,13 @@ const createInitialAdmin = async () => {
       });
       await admin.save();
       console.log("Initial admin created:", email);
+      console.log("DEBUG - Stored email:", admin.email);
+      console.log("DEBUG - Password hash exists:", !!admin.passwordHash);
+      console.log("DEBUG - Password hash length:", admin.passwordHash?.length);
+      // Verify we can find it
+      const check = await Admin.findOne({ email: email.toLowerCase() });
+      console.log("DEBUG - Can retrieve admin:", !!check);
+      console.log("DEBUG - Retrieved email:", check?.email);
     }
   } catch (e) {
     console.error(e);
