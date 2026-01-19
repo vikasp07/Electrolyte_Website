@@ -101,7 +101,7 @@ const HeroBanner = ({ scrollY }) => {
 
             {/* CTA Button */}
             <a href="/services" className="btn-primary animate-in">
-              <span className="btn-text">EXPLORE OUR SERVICES</span>
+              <span className="btn-text">Request Technical Discussion</span>
               <i className="ri-arrow-right-line"></i>
             </a>
 

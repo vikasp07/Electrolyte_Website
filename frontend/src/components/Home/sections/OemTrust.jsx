@@ -3,35 +3,6 @@ import "../styles/OemTrust.css";
 export default function OemTrust() {
   return (
     <>
-      {/* HERO */}
-      <section className="hero">
-        <h1>
-          ISO & ZED Certified L3/L4 PCB Repair Services
-          <br /> for OEMs
-        </h1>
-
-        <p>
-          Component-level PCB repair, refurbishment, and diagnostics backed by
-          ISO 9001:2015 and Zero Defect Zero Effect certifications.
-        </p>
-
-        <div className="hero-buttons">
-          <button className="btn-primary">Request Technical Discussion</button>
-          <button className="btn-secondary">Book for facility visit</button>
-        </div>
-
-        <div className="hero-badges">
-          <span>
-            <img src="/images/Home/iso-certified.png" alt="ISO 9001:2015 Certified" className="badge-icon" />
-            ISO 9001:2015 Certified
-          </span>
-          <span>
-            <img src="/images/Home/zed-certified.png" alt="ZED Certified" className="badge-icon" />
-            ZED – Zero Defect Zero Effect
-          </span>
-        </div>
-      </section>
-
       {/* WHY TRUST */}
       <section className="trust-section">
         <h2>Why OEMs Trust Electrolyte Solutions</h2>
