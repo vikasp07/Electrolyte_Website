@@ -23,7 +23,8 @@ const UseCasesSlider = () => {
     },
     {
       id: 2,
-      title: "Securing Industrial Control Systems: Best Practices for OT Security",
+      title:
+        "Securing Industrial Control Systems: Best Practices for OT Security",
       description:
         "Learn about the critical importance of securing operational technology environments and the best practices for protecting industrial control systems from cyber threats...",
       image:
@@ -43,7 +44,8 @@ const UseCasesSlider = () => {
     },
     {
       id: 4,
-      title: "Database Replication Security: Ensuring Data Integrity Across Networks",
+      title:
+        "Database Replication Security: Ensuring Data Integrity Across Networks",
       description:
         "Learn how to implement secure database replication across network boundaries while maintaining data integrity and protecting sensitive information...",
       image: "/images/Home/Database-Replication-Using-Data-Diodes.jpg",
@@ -52,7 +54,8 @@ const UseCasesSlider = () => {
     },
     {
       id: 5,
-      title: "CCTV Network Security: Protecting Surveillance Systems from Cyber Threats",
+      title:
+        "CCTV Network Security: Protecting Surveillance Systems from Cyber Threats",
       description:
         "Explore the critical importance of securing CCTV networks and learn how to protect surveillance systems from cyber attacks while maintaining operational effectiveness...",
       image: "/images/Home/Securing-Critical-CCTV-Networks-and-Enterprise.jpg",
@@ -93,6 +96,30 @@ const UseCasesSlider = () => {
         </div>
 
         <div className="usecases-slider-wrapper">
+          {/* Left Arrow Navigation */}
+          <button
+            className="usecase-nav-btn usecase-nav-prev"
+            onClick={() =>
+              setCurrentSlide(
+                (prev) => (prev - 1 + blogPosts.length) % blogPosts.length
+              )
+            }
+            aria-label="Previous slide"
+          >
+            <img src="/images/Home/left_array.png" alt="Previous" />
+          </button>
+
+          {/* Right Arrow Navigation */}
+          <button
+            className="usecase-nav-btn usecase-nav-next"
+            onClick={() =>
+              setCurrentSlide((prev) => (prev + 1) % blogPosts.length)
+            }
+            aria-label="Next slide"
+          >
+            <img src="/images/Home/right_array.png" alt="Next" />
+          </button>
+
           <div className="usecases-slider" ref={sliderRef}>
             {blogPosts.map((post, index) => (
               <div
@@ -111,12 +138,11 @@ const UseCasesSlider = () => {
                 }}
               >
                 <div className="usecase-slide-content">
-                  <div className="usecase-image" onClick={() => handleBlogClick(post.link)}>
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      loading="lazy"
-                    />
+                  <div
+                    className="usecase-image"
+                    onClick={() => handleBlogClick(post.link)}
+                  >
+                    <img src={post.image} alt={post.title} loading="lazy" />
                   </div>
                   <div className="usecase-info animate-bottom">
                     {post.tagline && (

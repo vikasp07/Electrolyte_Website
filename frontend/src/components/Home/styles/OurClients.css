@@ -187,6 +187,16 @@
   font-size: 1.5rem;
   z-index: 10;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 0;
+}
+
+.client-nav-btn img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(83%) sepia(46%) saturate(1000%)
+    hue-rotate(358deg) brightness(103%) contrast(106%);
+  transition: all 0.3s ease;
 }
 
 .client-nav-prev {
@@ -203,6 +213,10 @@
   color: var(--text-dark);
   transform: translateY(-50%) scale(1.1);
   box-shadow: 0 6px 20px rgba(255, 212, 0, 0.3);
+}
+
+.client-nav-btn:hover img {
+  filter: brightness(0) saturate(100%);
 }
 
 .client-nav-btn:active {

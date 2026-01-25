@@ -107,14 +107,14 @@ const OurServices = () => {
             onClick={scrollLeft}
             aria-label="Previous services"
           >
-            <i className="ri-arrow-left-s-line"></i>
+            <img src="/images/Home/left_array.png" alt="Previous" />
           </button>
           <button
             className="service-nav-btn service-nav-next"
             onClick={scrollRight}
             aria-label="Next services"
           >
-            <i className="ri-arrow-right-s-line"></i>
+            <img src="/images/Home/right_array.png" alt="Next" />
           </button>
         </div>
       </div>

@@ -178,12 +178,26 @@
   justify-content: center;
   z-index: 10;
   transition: var(--transition);
+  padding: 0;
+}
+
+.service-nav-btn img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(83%) sepia(46%) saturate(1000%)
+    hue-rotate(358deg) brightness(103%) contrast(106%);
+  transition: var(--transition);
 }
 
 .service-nav-btn:hover {
   background: var(--primary);
   color: var(--bg-dark);
   transform: translateY(-50%) scale(1.1);
+}
+
+.service-nav-btn:hover img {
+  filter: brightness(0) saturate(100%);
 }
 
 .service-nav-prev {

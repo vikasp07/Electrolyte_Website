@@ -128,14 +128,14 @@ const OurClients = () => {
             onClick={scrollLeft}
             aria-label="Previous clients"
           >
-            <i className="ri-arrow-left-s-line"></i>
+            <img src="/images/Home/left_array.png" alt="Previous" />
           </button>
           <button
             className="client-nav-btn client-nav-next"
             onClick={scrollRight}
             aria-label="Next clients"
           >
-            <i className="ri-arrow-right-s-line"></i>
+            <img src="/images/Home/right_array.png" alt="Next" />
           </button>
         </div>
       </div>
