@@ -14,7 +14,10 @@ export default function OemTrust() {
         <div className="trust-grid">
           <div className="trust-card">
             <div className="icon">
-              <img src="/images/Home/component-repair.png" alt="Component Repair" />
+              <img
+                src="/images/Home/component-repair.png"
+                alt="Component Repair"
+              />
             </div>
             <h3>L3/L4 Component-Level Repair</h3>
             <p>
@@ -36,7 +39,10 @@ export default function OemTrust() {
 
           <div className="trust-card">
             <div className="icon">
-              <img src="/images/Home/zed-certified.png" alt="ZED Sustainability" />
+              <img
+                src="/images/Home/zed-certified.png"
+                alt="ZED Sustainability"
+              />
             </div>
             <h3>ZED Certified Operations</h3>
             <p>
@@ -47,7 +53,10 @@ export default function OemTrust() {
 
           <div className="trust-card">
             <div className="icon">
-              <img src="/images/Home/analytics-dashboard.png" alt="Analytics Dashboard" />
+              <img
+                src="/images/Home/AI-built-data-1.jpg"
+                alt="Analytics Dashboard"
+              />
             </div>
             <h3>Batch-Level Dashboards</h3>
             <p>
@@ -58,7 +67,10 @@ export default function OemTrust() {
 
           <div className="trust-card">
             <div className="icon">
-              <img src="/images/Home/qr-traceability.png" alt="QR Traceability" />
+              <img
+                src="/images/Home/qr-traceability.png"
+                alt="QR Traceability"
+              />
             </div>
             <h3>QR-Based Traceability</h3>
             <p>

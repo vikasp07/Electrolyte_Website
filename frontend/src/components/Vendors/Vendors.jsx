@@ -151,10 +151,9 @@ const Clients = () => {
                                   <img src={v.logo} alt={`${v.name} logo`} />
                                 </a>
                               ) : (
-                                <img
-                                  src="/images/Vendors/placeholder.png"
-                                  alt={v.name}
-                                />
+                                <div className="placeholder-logo">
+                                  <span>{v.name.charAt(0)}</span>
+                                </div>
                               )}
                               <figcaption className="card-caption">
                                 {v.name}
