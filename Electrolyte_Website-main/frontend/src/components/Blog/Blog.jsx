@@ -43,6 +43,7 @@ const BlogList = () => {
       setLoading(true);
       setError("");
       try {
+<<<<<<< HEAD
         // Force absolute URL to backend
         const API_URL = "https://electrolyte-website.onrender.com/api/blogs";
         console.log("Making API call to:", API_URL);
@@ -64,14 +65,29 @@ const BlogList = () => {
         }
         
         // Check if response is JSON
+=======
+        const API_BASE = getApiBase();
+        console.log("Blog list API:", `${API_BASE}/blogs`);
+
+        const res = await fetch(`${API_BASE}/blogs`, {
+          headers: { Accept: "application/json" },
+        });
+
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+>>>>>>> 1faafd82a97279d2597b6f377a439799b8003267
         const contentType = res.headers.get("content-type");
-        console.log("Response content-type:", contentType);
         if (!contentType || !contentType.includes("application/json")) {
+<<<<<<< HEAD
           const responseText = await res.text();
           console.error("Non-JSON response received:", responseText.substring(0, 500));
+=======
+          const text = await res.text();
+          console.error("Non-JSON response:", text.slice(0, 200));
+>>>>>>> 1faafd82a97279d2597b6f377a439799b8003267
           throw new Error("Response is not JSON");
         }
-        
+
         const data = await res.json();
         console.log("Successfully loaded blogs:", data.length);
         setBlogs(Array.isArray(data) ? data : []);
@@ -209,6 +225,7 @@ const BlogPost = () => {
   useEffect(() => {
     const load = async () => {
       try {
+<<<<<<< HEAD
         // Force absolute URLs to backend
         const BLOG_API_URL = `https://electrolyte-website.onrender.com/api/blogs/${encodeURIComponent(slug)}`;
         const LIST_API_URL = "https://electrolyte-website.onrender.com/api/blogs";
@@ -258,6 +275,26 @@ const BlogPost = () => {
             console.error("Blog list response is not JSON");
           }
         }
+=======
+        const API_BASE = getApiBase();
+        console.log("Blog post API:", `${API_BASE}/blogs/${slug}`);
+
+        const res = await fetch(
+          `${API_BASE}/blogs/${encodeURIComponent(slug)}`,
+          { headers: { Accept: "application/json" } }
+        );
+
+        if (res.ok) {
+          const data = await res.json();
+          setBlog(data);
+        }
+
+        const listRes = await fetch(`${API_BASE}/blogs`, {
+          headers: { Accept: "application/json" },
+        });
+        const listData = await listRes.json();
+        setAllBlogs(Array.isArray(listData) ? listData : []);
+>>>>>>> 1faafd82a97279d2597b6f377a439799b8003267
       } catch (e) {
         console.error("Failed to load blog:", e);
       }
