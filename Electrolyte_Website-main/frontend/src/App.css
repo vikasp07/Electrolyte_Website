@@ -16,13 +16,13 @@ body {
 
 .App.dark {
   --primary: #FFD400;
-  --primary-dark: #0B0B0B;
-  --primary-light: #1F2937;
+  --primary-dark: #111827;
+  --primary-light: #111827;
   --primary-accent: #D5FFF8;
 
   --bg-dark: #111827;
-  --bg-light: #F9FAFB;
-  --bg-card: #1F2937;
+  --bg-light: #111827;
+  --bg-card: #111827;
   --border-light: #374151;
 
   --text-heading: #FFFFFF;
@@ -44,7 +44,7 @@ body {
   --accent-color: var(--primary);
   --alternate-color: var(--primary-dark);
   --dark-color: var(--bg-dark);
-  --light-color: var(--bg-light);
+  --light-color: #FFFFFF;
   --text-color: var(--text-dark);
   --gray-text: var(--text-muted);
   --muted-color: var(--text-muted);
@@ -52,13 +52,13 @@ body {
 
 .App.light {
   --primary: #007bff;
-  --primary-dark: #0056b3;
-  --primary-light: #e6f2ff;
+  --primary-dark: #111827;
+  --primary-light: #111827;
   --primary-accent: #007bff;
 
-  --bg-dark: #ffffff;
-  --bg-light: #f8f9fa;
-  --bg-card: #ffffff;
+  --bg-dark: #111827;
+  --bg-light: #111827;
+  --bg-card: #111827;
   --border-light: #dee2e6;
 
   --text-heading: #343a40;
@@ -80,7 +80,7 @@ body {
   --accent-color: var(--primary);
   --alternate-color: var(--primary-dark);
   --dark-color: var(--bg-dark);
-  --light-color: var(--bg-light);
+  --light-color: #FFFFFF;
   --text-color: var(--text-dark);
   --gray-text: var(--text-muted);
   --muted-color: var(--text-muted);

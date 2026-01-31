@@ -1,7 +1,7 @@
 /* ===== Quality Systems Section ===== */
 
 .quality-section {
-  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+  background: linear-gradient(180deg, #111827 0%, #111827 100%);
   padding: var(--section-padding);
   position: relative;
   z-index: 1;

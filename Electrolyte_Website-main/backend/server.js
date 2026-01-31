@@ -9,28 +9,97 @@ const fs = require("fs");
 // connect DB
 connectDB(process.env.MONGO_URI);
 
-// middlewares
+// ============================================
+// CORS CONFIGURATION - MUST BE BEFORE ROUTES
+// ============================================
 const cors = require("cors");
-app.use(cors());
+
+// Define allowed origins
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://localhost:3001", 
+  process.env.FRONTEND_URL_DEV,
+  process.env.FRONTEND_URL_PROD,
+  // Add your production frontend URL here
+  "https://your-production-domain.com",
+  "https://electrolyte-solutions.netlify.app", // Example if using Netlify
+  "https://electrolyte-solutions.vercel.app",  // Example if using Vercel
+].filter(Boolean); // Remove undefined values
+
+// CORS options
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps, Postman, curl)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      console.log("CORS blocked origin:", origin);
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true, // Allow cookies and authorization headers
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+  allowedHeaders: [
+    "Content-Type",
+    "Authorization",
+    "X-Requested-With",
+    "Accept",
+    "Origin",
+  ],
+  exposedHeaders: ["Content-Range", "X-Content-Range"],
+  maxAge: 86400, // 24 hours - cache preflight response
+};
+
+// Apply CORS middleware BEFORE routes
+app.use(cors(corsOptions));
+
+// Handle preflight requests explicitly
+app.options("*", cors(corsOptions));
+
+// ============================================
+// OTHER MIDDLEWARES
+// ============================================
 app.use(express.json()); // parse application/json
+app.use(express.urlencoded({ extended: true })); // parse application/x-www-form-urlencoded
 
 // serve uploads
 const uploadsDir = path.join(__dirname, "uploads");
 if (!fs.existsSync(uploadsDir)) fs.mkdirSync(uploadsDir);
 app.use("/uploads", express.static(uploadsDir));
 
-// routes
+// ============================================
+// ROUTES
+// ============================================
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/photos", require("./routes/photos"));
 app.use("/api/sponsors", require("./routes/sponsors"));
 app.use("/api/contact", require("./routes/contact"));
 app.use("/api/blogs", require("./routes/blogs"));
 
-// health
+// health check
 app.get("/api/health", (req, res) => res.json({ ok: true, time: new Date() }));
 
-// initial admin auto-creation (first-run convenience)
-// If admin doesn't exist, create from env ADMIN_EMAIL / ADMIN_PASSWORD
+// Root endpoint
+app.get("/", (req, res) => {
+  res.json({
+    message: "Electrolyte Solutions API",
+    status: "running",
+    endpoints: {
+      health: "/api/health",
+      auth: "/api/auth",
+      photos: "/api/photos",
+      sponsors: "/api/sponsors",
+      contact: "/api/contact",
+      blogs: "/api/blogs",
+    },
+  });
+});
+
+// ============================================
+// INITIAL ADMIN AUTO-CREATION
+// ============================================
 const Admin = require("./models/Admin");
 const bcrypt = require("bcryptjs");
 const createInitialAdmin = async () => {
@@ -58,10 +127,32 @@ const createInitialAdmin = async () => {
       console.log("DEBUG - Retrieved email:", check?.email);
     }
   } catch (e) {
-    console.error(e);
+    console.error("Error creating initial admin:", e);
   }
 };
 createInitialAdmin();
 
+// ============================================
+// ERROR HANDLING
+// ============================================
+// 404 handler
+app.use((req, res) => {
+  res.status(404).json({ error: "Route not found" });
+});
+
+// Global error handler
+app.use((err, req, res, next) => {
+  console.error("Error:", err.message);
+  res.status(err.status || 500).json({
+    error: err.message || "Internal server error",
+  });
+});
+
+// ============================================
+// START SERVER
+// ============================================
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+  console.log(`Allowed CORS origins:`, allowedOrigins);
+});

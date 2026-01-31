@@ -67,9 +67,6 @@ const MissionVisionValues = () => {
       </div>
 
       {/* Bottom Coverage Image */}
-      <div className="section-bottom-coverage">
-        <img src="/images/AboutUs/bottom_black.png" alt="wave" loading="lazy" />
-      </div>
     </section>
   );
 };

@@ -3,8 +3,8 @@
 :root {
   --primary: #ffd400;
   --bg-dark: #111827;
-  --bg-light: #f9fafb;
-  --bg-card: #1f2937;
+  --bg-light: #111827;
+  --bg-card: #111827;
   --text-heading: #ffffff;
   --text-body: #9ca3af;
   --text-muted: #6b7280;
@@ -48,7 +48,7 @@
 
 /* Section Overlay for background images */
 .section-overlay {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(17, 24, 39, 0.95);
   backdrop-filter: blur(2px);
   padding: 4rem 0;
 }
@@ -179,8 +179,8 @@
   padding: 100px 0;
   background: linear-gradient(
     180deg,
-    rgba(31, 41, 55, 0.5) 0%,
-    var(--bg-dark) 100%
+    #111827 0%,
+    #111827 100%
   );
   border-top: 1px solid var(--border-light);
   border-bottom: 1px solid var(--border-light);
@@ -224,7 +224,7 @@
 /* ============ WHY SECTION ============ */
 .why-section {
   padding: 100px 0;
-  background: var(--bg-dark);
+  background: #111827;
 }
 
 .why-grid {
@@ -267,8 +267,8 @@
   padding: 100px 0;
   background: linear-gradient(
     180deg,
-    var(--bg-dark) 0%,
-    rgba(31, 41, 55, 0.5) 100%
+    #111827 0%,
+    #111827 100%
   );
   border-top: 1px solid var(--border-light);
 }
@@ -638,7 +638,7 @@
 
 .about-overview-section {
   padding: 100px 0;
-  background: var(--bg-dark);
+  background: #111827;
   border-bottom: 1px solid var(--border-light);
 }
 

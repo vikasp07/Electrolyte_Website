@@ -3,13 +3,13 @@
 :root {
   /* Oregon Systems Dark Palette */
   --primary: #FFD400;
-  --primary-dark: #0B0B0B;
-  --primary-light: #1F2937;
+  --primary-dark: #111827;
+  --primary-light: #111827;
   --primary-accent: #D5FFF8;
 
   --bg-dark: #111827;
-  --bg-light: #F9FAFB;
-  --bg-card: #1F2937;
+  --bg-light: #111827;
+  --bg-card: #111827;
   --border-light: #374151;
 
   --text-heading: #FFFFFF;
@@ -26,7 +26,7 @@
   --accent-color: var(--primary);
   --alternate-color: var(--primary-dark);
   --dark-bg: var(--bg-dark);
-  --light-text: var(--bg-light);
+  --light-text: #FFFFFF;
   --text-color: var(--text-dark);
   --gray-text: var(--text-muted);
   --section-padding: 80px 0;
@@ -65,7 +65,7 @@
   flex-direction: column;
   align-items: stretch;
   justify-content: space-between;
-  background: linear-gradient(42deg, #00000080 0%, #000000a3 102.5%);
+  background: linear-gradient(42deg, #11182780 0%, #111827a3 102.5%);
   overflow: hidden;
   z-index: 1;
 }
@@ -76,7 +76,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(42deg, #00000080 0%, #000000a3 102.5%);
+  background: linear-gradient(42deg, #11182780 0%, #111827a3 102.5%);
   z-index: 0;
 }
 
@@ -173,7 +173,7 @@
 /* ===== Services Carousel Section ===== */
 
 .services-carousel-section {
-  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+  background: linear-gradient(180deg, #111827 0%, #111827 100%);
   padding: 80px 60px;
   position: relative;
   z-index: 1;
@@ -410,7 +410,7 @@
 /* ===== Services Grid Section ===== */
 
 .services-grid-section {
-  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+  background: linear-gradient(180deg, #111827 0%, #111827 100%);
   padding: var(--section-padding);
   position: relative;
   z-index: 1;
@@ -720,7 +720,7 @@
 /* ===== New Services Section ===== */
 
 .services-section {
-  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+  background: linear-gradient(180deg, #111827 0%, #111827 100%);
   padding: var(--section-padding);
   position: relative;
   z-index: 1;

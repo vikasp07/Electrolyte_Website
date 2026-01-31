@@ -2,8 +2,8 @@
 
 :root {
   --oem-primary: #FFD400;
-  --oem-dark: #0B0B0B;
-  --oem-light: #1F2937;
+  --oem-dark: #111827;
+  --oem-light: #111827;
   --oem-accent: #D5FFF8;
   --oem-text: #FFFFFF;
   --oem-text-secondary: #9CA3AF;
@@ -12,7 +12,7 @@
 /* ===== HERO SECTION ===== */
 .hero {
   position: relative;
-  background: linear-gradient(135deg, var(--oem-dark) 0%, #1a1a1a 100%);
+  background: linear-gradient(135deg, var(--oem-dark) 0%, #111827 100%);
   padding: 80px 60px;
   text-align: center;
   overflow: hidden;
@@ -126,7 +126,7 @@
 
 /* ===== TRUST SECTION ===== */
 .trust-section {
-  background: linear-gradient(180deg, #1a1a1a 0%, var(--oem-dark) 100%);
+  background: linear-gradient(180deg, #111827 0%, var(--oem-dark) 100%);
   padding: 80px 60px;
   text-align: center;
 }
@@ -204,7 +204,7 @@
 
 /* ===== VALUE SECTION ===== */
 .value-section {
-  background: linear-gradient(180deg, var(--oem-dark) 0%, #0a0a0a 100%);
+  background: linear-gradient(180deg, var(--oem-dark) 0%, #111827 100%);
   padding: 80px 60px;
   text-align: center;
 }

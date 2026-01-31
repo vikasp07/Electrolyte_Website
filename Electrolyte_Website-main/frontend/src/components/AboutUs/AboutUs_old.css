@@ -1,13 +1,13 @@
 :root {
   /* Oregon Systems Dark Palette */
   --primary: #FFD400;
-  --primary-dark: #0B0B0B;
-  --primary-light: #1F2937;
+  --primary-dark: #111827;
+  --primary-light: #111827;
   --primary-accent: #D5FFF8;
 
   --bg-dark: #111827;
-  --bg-light: #F9FAFB;
-  --bg-card: #1F2937;
+  --bg-light: #111827;
+  --bg-card: #111827;
   --border-light: #374151;
 
   --text-heading: #FFFFFF;
@@ -24,7 +24,7 @@
   --accent-color: var(--primary);
   --alternate-color: var(--primary-dark);
   --dark-bg: var(--bg-dark);
-  --light-text: var(--bg-light);
+  --light-text: #FFFFFF;
   --text-color: var(--text-dark);
   --gray-text: var(--text-muted);
   --section-padding: 80px 0;

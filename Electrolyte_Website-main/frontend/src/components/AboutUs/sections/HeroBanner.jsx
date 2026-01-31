@@ -17,11 +17,10 @@ const HeroBanner = ({ scrollY }) => {
       <div className="hero-banner-overlay">
         <div className="hero-banner-content">
           <h1 className="hero-banner-title">
-            Defending Critical Infrastructure, Empowering Resilience
+            About Electrolyte Solutions
           </h1>
           <p className="hero-banner-subtitle">
-            Cutting Edge Cyber Security | Intelligent Infrastructure - AI
-            Storage & Computing
+            Electronics Repair & Refurbishment Solutions
           </p>
         </div>
       </div>

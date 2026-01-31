@@ -24,7 +24,10 @@ async function request(method, url, { headers = {}, body } = {}) {
     method,
     headers: finalHeaders,
     body: isFormData ? body : body ? JSON.stringify(body) : undefined,
+    credentials: "include", // Include credentials (cookies, authorization headers)
+    mode: "cors", // Explicitly set CORS mode
   });
+  
   if (!res.ok) {
     const text = await res.text();
     throw new Error(text || `${res.status}`);

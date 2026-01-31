@@ -127,75 +127,11 @@ const AboutUs = () => {
     <div className="about-us-container">
       <HeroBanner scrollY={scrollY} />
 
-      {/* Mission, Vision, Values Section */}
-      <MissionVisionValues />
-
       {/* About Overview Section */}
       <AboutOverview />
 
-      {/* About Story Section */}
-      <section className="about-story-section">
-        <div className="container">
-          <h2 className="section-title">
-            Setting the Standard in Electrochemistry
-          </h2>
-          <div className="story-grid">
-            <div className="story-text">
-              <h3>Expertise You Can Trust</h3>
-              <p>
-                With decades of experience in electrochemistry, our certified
-                engineering team brings deep technical knowledge and advanced
-                testing capabilities. We lead the industry in delivering
-                innovative solutions to organizations that matter.
-              </p>
-            </div>
-            <div className="story-image">
-              <img
-                src="/images/AboutUs/company-overview.jpg"
-                alt="Company Overview"
-                className="story-img"
-              />
-            </div>
-          </div>
-
-          <div className="story-grid reverse">
-            <div className="story-image">
-              <img
-                src="/images/Home/A-Tailored-Approach.jpg"
-                alt="Tailored Solutions"
-                className="story-img"
-              />
-            </div>
-            <div className="story-text">
-              <h3>Tailored Approach</h3>
-              <p>
-                We work closely with clients to analyze requirements, identify
-                challenges, and design customized electrochemical solutions that
-                align with their specific operational and business goals.
-              </p>
-            </div>
-          </div>
-
-          <div className="story-grid">
-            <div className="story-text">
-              <h3>Global Technology, Local Support</h3>
-              <p>
-                As industry leaders in electrochemical solutions, we provide
-                access to the latest innovations. Our global network combined
-                with local teams ensures you receive dedicated support whenever
-                needed.
-              </p>
-            </div>
-            <div className="story-image">
-              <img
-                src="/images/Home/Global-Technology-Local-Support.jpg"
-                alt="Global Support"
-                className="story-img"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Mission, Vision, Values Section */}
+      <MissionVisionValues />
 
       {/* Values Section */}
       <section
